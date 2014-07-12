@@ -1,0 +1,17 @@
+{
+    "name": "digilist/geobundle",
+    "description": "Doctrine Geo extensions",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Markus Fasselt",
+            "email": "markus.fasselt@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Digilist\\GeoBundle\\": ""
+        }
+    },
+    "require": {}
+}
