@@ -18,6 +18,7 @@ class City
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -47,9 +48,6 @@ class City
 
     /** @ORM\Column(type="string") */
     private $slug;
-
-    /** @ORM\Column(type="text") */
-    private $seoText;
 
 //    /**
 //     * @ORM\OneToMany(targetEntity="ZipCode", mappedBy="city")
@@ -149,13 +147,6 @@ class City
         return $this->stateShort;
     }
 
-    /**
-     * @return string
-     */
-    public function getSeoText()
-    {
-        return $this->seoText;
-    }
 
     /**
      * @return ArrayCollection
