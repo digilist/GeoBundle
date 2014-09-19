@@ -5,13 +5,19 @@ namespace Digilist\GeoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Geodb
+ * GeoDB Compatible ZipCode Entity
  *
- * @ORM\Table(name="geodb_zip_codes")
- * @ORM\Entity
  */
 class ZipCode
 {
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\MappedSuperclass
+     */
+    private $id;
 
     /** @ORM\Column(type="string") */
     private $zipCode;
@@ -26,6 +32,26 @@ class ZipCode
      * @ORM\ManyToOne(targetEntity="City", inversedBy="zip_codes")
      */
     private $city;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * @return \Digilist\GeoBundle\ORM\Point

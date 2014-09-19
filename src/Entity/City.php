@@ -7,13 +7,19 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Geodb
+ * GeoDB compatible city entity
  *
- * @ORM\Table(name="geodb_cities")
- * @ORM\Entity
  */
 class City
 {
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\MappedSuperclass
+     */
+    private $id;
 
     /** @ORM\Column(name="country_code", type="string") */
     private $countryCode;
@@ -50,6 +56,26 @@ class City
      * @var Collection
      */
     private $zipCodes;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * @return string
