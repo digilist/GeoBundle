@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * GeoDB compatible city entity
  *
+ * @ORM\MappedSuperclass
  */
 class City
 {
@@ -17,7 +18,6 @@ class City
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\MappedSuperclass
      */
     private $id;
 
@@ -51,11 +51,11 @@ class City
     /** @ORM\Column(type="text") */
     private $seoText;
 
-    /**
-     * @ORM\OneToMany(targetEntity="ZipCode", mappedBy="city")
-     * @var Collection
-     */
-    private $zipCodes;
+//    /**
+//     * @ORM\OneToMany(targetEntity="ZipCode", mappedBy="city")
+//     * @var Collection
+//     */
+//    private $zipCodes;
 
     /**
      * @return int

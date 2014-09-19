@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * GeoDB Compatible ZipCode Entity
  *
+ * @ORM\MappedSuperclass
+ *
  */
 class ZipCode
 {
@@ -15,7 +17,6 @@ class ZipCode
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\MappedSuperclass
      */
     private $id;
 

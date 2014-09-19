@@ -7,6 +7,7 @@ Please install this bundle via composer (via a custom repository) and add the fo
 
 ```
 doctrine:
+	dbal:
         types:
             point: Digilist\GeoBundle\ORM\PointType
         mapping_types:
